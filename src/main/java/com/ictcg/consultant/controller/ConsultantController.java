@@ -1,8 +1,11 @@
 package com.ictcg.consultant.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -29,15 +32,18 @@ public class ConsultantController {
 	}
 	
 	@PostMapping("/save")
-	public String save(@ModelAttribute("Consultant") Consultant consultant, Model model) {
+	public String save(@Valid @ModelAttribute("consultant") Consultant consultant, BindingResult result, Model model) {
+		
+		if(result.hasErrors())
+			return "consultant-form";
 		consultantService.save(consultant);
 		return "redirect:/consultant/list";
 	}
 	
-	@DeleteMapping("/delete/{customerId}")
-	public String delete(@RequestParam Integer customerId, Model model) {
+	@GetMapping("/delete")
+	public String delete(@RequestParam Integer consultantId, Model model) {
 		
-		consultantService.delete(customerId);
+		consultantService.delete(consultantId);
 		
 		return "redirect:/consultant/list";
 	}
@@ -48,9 +54,9 @@ public class ConsultantController {
 		return "consultant-form";
 	}
 	
-	@GetMapping("/updateForm/{customerId}")
-	public String showUpdateForm(@RequestParam Integer customerId, Model model) {
-		model.addAttribute("consultant", consultantService.findById(customerId));
+	@GetMapping("/updateForm")
+	public String showUpdateForm(@RequestParam Integer consultantId, Model model) {
+		model.addAttribute("consultant", consultantService.findById(consultantId));
 		return "consultant-form";
 	}
 }

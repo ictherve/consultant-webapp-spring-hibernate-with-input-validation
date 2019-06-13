@@ -1,10 +1,19 @@
 package com.ictcg.consultant.model;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class Consultant {
 
 	private Integer id;
+	@NotNull
+	@Size(min = 4, max = 10, message = "FirstName is Required, min 4 characters, max 10 characters")
 	private String firstName;
+	@NotNull
+	@Size(min = 4, max = 10, message = "LastName is Required, min 4 characters, max 10 characters")
 	private String lastName;
+	
+	@Size(min = 8 , message = "Email is Required, min 8 characters")
 	private String email;
 	private String address;
 	

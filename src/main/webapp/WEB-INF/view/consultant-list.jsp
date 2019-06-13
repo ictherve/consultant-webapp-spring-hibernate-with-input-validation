@@ -21,6 +21,8 @@
 				<tr>
 					<th>First Name</th>
 					<th>Last Name</th>
+					<th>Email</th>
+					<th>Address</th>
 					<th>Action</th>
 				</tr>
 
@@ -28,19 +30,20 @@
 				<c:forEach var="consultant" items="${consultants}">
 
 					<!-- construct an "update" link with customer id -->
-					<c:url var="updateLink" value="/customer/updateForm">
-						<c:param name="customerId" value="${consultant.id}" />
+					<c:url var="updateLink" value="/consultant/updateForm">
+						<c:param name="consultantId" value="${consultant.id}" />
 					</c:url>
 
 					<!-- construct an "delete" link with customer id -->
-					<c:url var="deleteLink" value="/customer/delete">
-						<c:param name="customerId" value="${consultant.id}" />
+					<c:url var="deleteLink" value="/consultant/delete">
+						<c:param name="consultantId" value="${consultant.id}" />
 					</c:url>
 
 					<tr>
 						<td>${consultant.firstName}</td>
 						<td>${consultant.lastName}</td>
-
+						<td>${consultant.email}</td>
+						<td>${consultant.address}</td>
 						<td>
 							<!-- display the update link --> <a href="${updateLink}">Update</a>
 							| <a href="${deleteLink}"
