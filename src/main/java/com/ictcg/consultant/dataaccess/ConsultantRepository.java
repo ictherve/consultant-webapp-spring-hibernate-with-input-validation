@@ -8,7 +8,7 @@ public interface ConsultantRepository {
 	
 	ConsultantEntity findById(Integer id);
 	
-	void save(ConsultantEntity customerEntity);
+	void save(ConsultantEntity consultantEntity);
 	
 	void delete(ConsultantEntity consultantEntity);
 }
