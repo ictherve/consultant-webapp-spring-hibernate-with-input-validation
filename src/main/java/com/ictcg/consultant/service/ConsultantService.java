@@ -12,5 +12,5 @@ public interface ConsultantService {
 	
 	void save(Consultant consultant);
 	
-	void delete(Consultant consultant);
+	void delete(Integer id);
 }

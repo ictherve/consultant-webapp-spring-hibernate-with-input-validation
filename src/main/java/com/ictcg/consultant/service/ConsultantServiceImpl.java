@@ -40,8 +40,9 @@ public class ConsultantServiceImpl implements ConsultantService{
 	}
 
 	@Override
-	public void delete(Consultant consultant) {
-		consultantRepository.delete(converter.map(consultant, ConsultantEntity.class));
+	public void delete(Integer id) {
+		ConsultantEntity consultantEntity = consultantRepository.findById(id);
+		consultantRepository.delete(consultantEntity);
 	}
 	
 	
