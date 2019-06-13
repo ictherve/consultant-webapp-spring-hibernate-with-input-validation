@@ -20,7 +20,7 @@ public class ConsultantController {
 	@Autowired
 	private ConsultantService consultantService;
 	
-	@GetMapping("/all")
+	@GetMapping("/list")
 	public String findAll(Model model) {
 		
 		model.addAttribute("consultants", consultantService.findAll());
@@ -34,10 +34,10 @@ public class ConsultantController {
 		return "redirect:/consultant/list";
 	}
 	
-	@DeleteMapping("/delete/{id}")
-	public String delete(@RequestParam Integer id, Model model) {
+	@DeleteMapping("/delete/{customerId}")
+	public String delete(@RequestParam Integer customerId, Model model) {
 		
-		consultantService.delete(id);
+		consultantService.delete(customerId);
 		
 		return "redirect:/consultant/list";
 	}
@@ -48,9 +48,9 @@ public class ConsultantController {
 		return "consultant-form";
 	}
 	
-	@GetMapping("/updateForm/{id}")
-	public String showUpdateForm(@RequestParam Integer id, Model model) {
-		model.addAttribute("consultant", consultantService.findById(id));
+	@GetMapping("/updateForm/{customerId}")
+	public String showUpdateForm(@RequestParam Integer customerId, Model model) {
+		model.addAttribute("consultant", consultantService.findById(customerId));
 		return "consultant-form";
 	}
 }

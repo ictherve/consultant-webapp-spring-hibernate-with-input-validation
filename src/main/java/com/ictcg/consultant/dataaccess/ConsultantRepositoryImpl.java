@@ -18,7 +18,7 @@ public class ConsultantRepositoryImpl implements ConsultantRepository {
 	@SuppressWarnings("unchecked")
 	@Override
 	public Collection<ConsultantEntity> findAll() {
-		return getCurrentSession().createQuery("from CustomerEntity").getResultList();
+		return getCurrentSession().createQuery("from ConsultantEntity").getResultList();
 	}
 
 	@Override

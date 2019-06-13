@@ -81,7 +81,7 @@
 
 	</dependencies>
 	<build>
-		<finalName>customer-web-app-with-maven-spring-hibernate</finalName>
+		<finalName>consultant-web-app-spring-hibernate</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>

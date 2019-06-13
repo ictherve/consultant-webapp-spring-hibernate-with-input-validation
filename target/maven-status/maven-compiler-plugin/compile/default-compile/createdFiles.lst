@@ -1,0 +1,7 @@
+com\ictcg\consultant\dataaccess\ConsultantEntity.class
+com\ictcg\consultant\service\ConsultantServiceImpl.class
+com\ictcg\consultant\controller\ConsultantController.class
+com\ictcg\consultant\model\Consultant.class
+com\ictcg\consultant\dataaccess\ConsultantRepositoryImpl.class
+com\ictcg\consultant\dataaccess\ConsultantRepository.class
+com\ictcg\consultant\service\ConsultantService.class
