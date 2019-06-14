@@ -23,6 +23,7 @@
 					<th>Last Name</th>
 					<th>Email</th>
 					<th>Address</th>
+					<th>BirthDate</th>
 					<th>Action</th>
 				</tr>
 
@@ -44,6 +45,7 @@
 						<td>${consultant.lastName}</td>
 						<td>${consultant.email}</td>
 						<td>${consultant.address}</td>
+						<td>${consultant.birthDate}</td>
 						<td>
 							<!-- display the update link --> <a href="${updateLink}">Update</a>
 							| <a href="${deleteLink}"

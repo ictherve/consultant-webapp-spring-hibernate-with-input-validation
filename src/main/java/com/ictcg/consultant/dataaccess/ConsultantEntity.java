@@ -1,5 +1,6 @@
 package com.ictcg.consultant.dataaccess;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,16 +18,18 @@ public class ConsultantEntity {
 	private String lastName;
 	private String email;
 	private String address;
+	private String birthDate;
 	
 	public ConsultantEntity() {}
 	
-	public ConsultantEntity(Integer id, String firstName, String lastName, String email, String address) {
+	public ConsultantEntity(Integer id, String firstName, String lastName, String email, String address, String birthDate) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.address = address;
+		this.birthDate = birthDate;
 	}
 
 	public Integer getId() {
@@ -69,6 +72,14 @@ public class ConsultantEntity {
 		this.address = address;
 	}
 
+	public String getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(String birthDate) {
+		this.birthDate = birthDate;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -97,7 +108,7 @@ public class ConsultantEntity {
 	@Override
 	public String toString() {
 		return "ConsultantEntity [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", address=" + address + "]";
+				+ ", address=" + address + ", birthDate=" + birthDate + "]";
 	}
 	
 }

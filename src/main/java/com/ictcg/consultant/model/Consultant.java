@@ -1,7 +1,10 @@
 package com.ictcg.consultant.model;
 
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import org.springframework.lang.NonNull;
 
 public class Consultant {
 
@@ -12,22 +15,25 @@ public class Consultant {
 	@NotNull
 	@Size(min = 4, max = 10, message = "LastName is Required, min 4 characters, max 10 characters")
 	private String lastName;
-	
 	@Size(min = 8 , message = "Email is Required, min 8 characters")
 	private String email;
 	private String address;
+	@NotNull
+	private String birthDate;
 	
 	public Consultant() {}
 	
-	public Consultant(Integer id, String firstName, String lastName, String email, String address) {
+	public Consultant(Integer id, String firstName, String lastName, String email, String address,
+			String birthDate) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.address = address;
+		this.birthDate = birthDate;
 	}
-	
+
 	public Integer getId() {
 		return id;
 	}
@@ -68,6 +74,14 @@ public class Consultant {
 		this.address = address;
 	}
 
+	public String getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(String birthDate) {
+		this.birthDate = birthDate;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -96,6 +110,5 @@ public class Consultant {
 		return "Consultant [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
 				+ ", address=" + address + "]";
 	}
-	
 	
 }

@@ -1,5 +1,6 @@
 package com.ictcg.consultant.service;
 
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
@@ -36,6 +37,8 @@ public class ConsultantServiceImpl implements ConsultantService{
 
 	@Override
 	public void save(Consultant consultant) {
+		String birthDate = consultant.getBirthDate() == null ? String.valueOf(LocalDate.now()) : consultant.getBirthDate();
+		consultant.setBirthDate(birthDate);
 		consultantRepository.save(converter.map(consultant, ConsultantEntity.class));
 	}
 

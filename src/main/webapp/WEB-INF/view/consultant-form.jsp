@@ -41,7 +41,7 @@
 				<tr>
 					<td><label>Email(*):</label></td>
 					<td>
-						<form:input path="email" />
+						<form:input path="email" type="email" />
 						<form:errors path="email" cssClass="error"></form:errors>
 					</td>
 				</tr>
@@ -51,6 +51,14 @@
 					<td>
 						<form:input path="address" />
 						<form:errors path="address" cssClass="error"></form:errors>
+					</td>
+				</tr>
+				
+				<tr>
+					<td><label>BirthDate:</label></td>
+					<td>
+						<form:input path="birthDate" type="date" />
+						<form:errors path="birthDate" cssClass="error"></form:errors>
 					</td>
 				</tr>
 
